@@ -1,0 +1,40 @@
+asyncapi: 3.0.0
+info:
+  title: Sammium NexusOps Event Contract
+  version: 0.1.0
+  description: Canonical events exchanged between the webhook gateway and integration worker.
+channels:
+  integrationEvents:
+    address: integration-events
+    messages:
+      canonicalEvent:
+        $ref: '#/components/messages/CanonicalEvent'
+operations:
+  publishIntegrationEvent:
+    action: send
+    channel:
+      $ref: '#/channels/integrationEvents'
+  processIntegrationEvent:
+    action: receive
+    channel:
+      $ref: '#/channels/integrationEvents'
+components:
+  messages:
+    CanonicalEvent:
+      name: CanonicalEvent
+      payload:
+        $ref: '#/components/schemas/CanonicalEvent'
+  schemas:
+    CanonicalEvent:
+      type: object
+      required: [specVersion, id, source, type, time, tenantId, subject, correlationId, data]
+      properties:
+        specVersion: { const: '1.0' }
+        id: { type: string, format: uuid }
+        source: { type: string, example: stripe }
+        type: { type: string, example: payment.succeeded }
+        time: { type: string, format: date-time }
+        tenantId: { type: string, format: uuid }
+        subject: { type: string }
+        correlationId: { type: string, format: uuid }
+        data: { type: object, additionalProperties: true }

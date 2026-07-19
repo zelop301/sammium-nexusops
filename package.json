@@ -1,0 +1,30 @@
+{
+  "name": "sammium-nexusops",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Event-driven business integration platform connecting Stripe, HubSpot, and Slack.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n API,WORKER,WEB -c auto \"npm run dev -w @nexus/api\" \"npm run dev -w @nexus/worker\" \"npm run dev -w @nexus/web\"",
+    "dev:api": "npm run dev -w @nexus/api",
+    "dev:worker": "npm run dev -w @nexus/worker",
+    "dev:web": "npm run dev -w @nexus/web",
+    "build": "npm run build -w @nexus/api && npm run build -w @nexus/worker && npm run build -w @nexus/web",
+    "typecheck": "npm run typecheck -w @nexus/api && npm run typecheck -w @nexus/worker && npm run typecheck -w @nexus/web",
+    "test": "npm run test -w @nexus/api && npm run test -w @nexus/worker",
+    "db:migrate": "npm run db:migrate -w @nexus/api",
+    "format": "prettier --write .",
+    "check": "npm run typecheck && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
+  }
+}
