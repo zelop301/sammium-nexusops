@@ -6,6 +6,16 @@ NexusOps receives Stripe webhooks, validates and normalizes provider payloads in
 
 > The repository runs fully in **demo mode** without third-party credentials. HubSpot and Slack actions are recorded as simulated successes until tokens are added.
 
+## Live Deployment
+
+- **Live Dashboard:** [NexusOps Web](https://nexusops-web-production.up.railway.app)
+- **API Documentation:** [Swagger/OpenAPI](https://sammium-nexusops-production.up.railway.app/docs)
+- **API Health Check:** [Production Health](https://sammium-nexusops-production.up.railway.app/health)
+
+> NexusOps is hosted on Railway using separate Web, API, Worker, PostgreSQL, and Redis services.
+
+
+
 ## Portfolio highlights
 
 - Provider-neutral canonical event contract
