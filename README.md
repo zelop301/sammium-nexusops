@@ -20,6 +20,30 @@ NexusOps receives Stripe webhooks, validates and normalizes provider payloads in
 - OpenAPI and AsyncAPI contracts
 - Dockerized PostgreSQL and Redis
 - Responsive React operations dashboard
+## Project Preview
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/preview1.png" alt="NexusOps Dashboard">
+      <p align="center"><strong>Integration Command Center</strong></p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/preview2.png" alt="Event Details">
+      <p align="center"><strong>Event Processing Details</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/preview3.png" alt="API Documentation">
+      <p align="center"><strong>OpenAPI Documentation</strong></p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/preview4.png" alt="System Architecture">
+      <p align="center"><strong>System Architecture</strong></p>
+    </td>
+  </tr>
+</table>
 
 ## Architecture
 
